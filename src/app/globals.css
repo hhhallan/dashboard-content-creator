@@ -213,3 +213,12 @@
 @utility bg-gradient-warning {
   background-image: var(--gradient-warning);
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-poppins);
+}
