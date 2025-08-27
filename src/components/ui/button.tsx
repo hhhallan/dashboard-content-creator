@@ -14,6 +14,8 @@ const buttonVariants = cva(
         action: 'bg-gradient-brand hover:opacity-90 text-white',
         outline: 'bg-transparent border border-input hover:bg-accent',
         primary: 'bg-rose text-white hover:opacity-90 font-bold',
+        ghost:
+          'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
