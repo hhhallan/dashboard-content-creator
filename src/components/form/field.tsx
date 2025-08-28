@@ -2,16 +2,22 @@
 
 import { Clock } from 'lucide-react';
 import { useState } from 'react';
-import type { RegisterOptions, UseFormRegister } from 'react-hook-form';
+import type {
+  FieldPath,
+  FieldValues,
+  RegisterOptions,
+  UseFormRegister,
+} from 'react-hook-form';
 import { cn } from '../../lib/utils';
 import { DatePicker } from '../ui/date-picker';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Textarea } from '../ui/textarea';
 
-interface FieldProps {
+// Type générique pour les valeurs de formulaire
+interface FieldProps<TFieldValues extends FieldValues = FieldValues> {
   label: string;
-  name: string;
+  name: FieldPath<TFieldValues>;
   type?:
     | 'text'
     | 'email'
@@ -27,15 +33,15 @@ interface FieldProps {
   error?: string;
   className?: string;
 
-  // RHF
-  register?: UseFormRegister<any>;
-  rules?: RegisterOptions;
+  // RHF avec types appropriés
+  register?: UseFormRegister<TFieldValues>;
+  rules?: RegisterOptions<TFieldValues>;
 
-  value?: any;
-  onChange?: (value: any) => void;
+  value?: string | Date;
+  onChange?: (value: string) => void;
 }
 
-export const Field = ({
+export const Field = <TFieldValues extends FieldValues = FieldValues>({
   name,
   label,
   type = 'text',
@@ -48,7 +54,7 @@ export const Field = ({
   rules,
   value,
   onChange,
-}: FieldProps) => {
+}: FieldProps<TFieldValues>) => {
   const invalid = !!error;
   const fieldClassName = cn(invalid ? 'border-red-500' : '');
   const isRequiredStar =
@@ -56,13 +62,17 @@ export const Field = ({
     (typeof rules?.required === 'string' ? true : !!rules?.required);
 
   const reg = register ? register(name, { required, ...rules }) : undefined;
-  const describedBy = invalid ? `${name}-error` : undefined;
+  const describedBy = invalid ? `${String(name)}-error` : undefined;
 
   const [date, setDate] = useState<Date | undefined>(
-    value ? new Date(value) : undefined
+    value instanceof Date ? value : value ? new Date(value) : undefined
   );
   const [timeValue, setTimeValue] = useState<string>(
-    value ? new Date(value).toTimeString().slice(0, 5) : ''
+    value instanceof Date
+      ? value.toTimeString().slice(0, 5)
+      : value
+      ? new Date(value).toTimeString().slice(0, 5)
+      : ''
   );
 
   const handleDateSelect = (selectedDate: Date | undefined) => {
@@ -84,7 +94,7 @@ export const Field = ({
 
   return (
     <div className={cn('space-y-2', className)}>
-      <Label htmlFor={name}>
+      <Label htmlFor={String(name)}>
         {label}
         {isRequiredStar && <span className="text-red-500 ml-1">*</span>}
       </Label>
@@ -111,8 +121,8 @@ export const Field = ({
         </div>
       ) : type === 'textarea' ? (
         <Textarea
-          id={name}
-          name={name}
+          id={String(name)}
+          name={String(name)}
           placeholder={placeholder}
           defaultValue={defaultValue}
           className={fieldClassName}
@@ -122,8 +132,8 @@ export const Field = ({
         />
       ) : (
         <Input
-          id={name}
-          name={name}
+          id={String(name)}
+          name={String(name)}
           type={type}
           placeholder={placeholder}
           defaultValue={defaultValue}
@@ -135,7 +145,11 @@ export const Field = ({
       )}
 
       {error && (
-        <p id={`${name}-error`} className="text-sm text-red-500" role="alert">
+        <p
+          id={`${String(name)}-error`}
+          className="text-sm text-red-500"
+          role="alert"
+        >
           {error}
         </p>
       )}
