@@ -1,8 +1,8 @@
 'use client';
 
 import { Instagram, Link, Music, Youtube } from 'lucide-react';
-import { ProfilePlatformCard } from '../components/profile-plateform-card';
-import { Card, CardContent, CardHeader } from '../components/ui/card';
+import { ProfilePlatformCard } from '../../components/profile-plateform-card';
+import { Card, CardContent, CardHeader } from '../../components/ui/card';
 
 const platforms = [
   { app: 'TikTok', icon: Music, isConnected: true },

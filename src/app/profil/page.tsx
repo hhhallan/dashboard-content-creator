@@ -5,7 +5,7 @@ import {
   ProfilePlatformBlock,
   ProfileSecurityBlock,
   ProfileSubscriptionBlock,
-} from '@/features/profile';
+} from '@/features/profile/profile';
 
 const ProfilPage = () => {
   return (
