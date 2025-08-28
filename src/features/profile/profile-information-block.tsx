@@ -2,11 +2,11 @@
 
 import { User } from 'lucide-react';
 import { toast } from 'sonner';
-import { Field } from '../components/form/field';
-import { FieldGroup } from '../components/form/field-group';
-import { Badge } from '../components/ui/badge';
-import { Button } from '../components/ui/button';
-import { Card, CardContent, CardHeader } from '../components/ui/card';
+import { Field } from '../../components/form/field';
+import { FieldGroup } from '../../components/form/field-group';
+import { Badge } from '../../components/ui/badge';
+import { Button } from '../../components/ui/button';
+import { Card, CardContent, CardHeader } from '../../components/ui/card';
 
 const ProfileInformationBlock = () => {
   return (

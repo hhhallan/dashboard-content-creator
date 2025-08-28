@@ -1,8 +1,8 @@
 'use client';
 
 import { Bell } from 'lucide-react';
-import { ProfileNotificationItem } from '../components/profile-notification-item';
-import { Card, CardContent, CardHeader } from '../components/ui/card';
+import { ProfileNotificationItem } from '../../components/profile-notification-item';
+import { Card, CardContent, CardHeader } from '../../components/ui/card';
 
 const notificationSettings = [
   {

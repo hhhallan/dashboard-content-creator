@@ -2,9 +2,9 @@
 
 import { Lock } from 'lucide-react';
 import { toast } from 'sonner';
-import { Field } from '../components/form/field';
-import { Button } from '../components/ui/button';
-import { Card, CardContent, CardHeader } from '../components/ui/card';
+import { Field } from '../../components/form/field';
+import { Button } from '../../components/ui/button';
+import { Card, CardContent, CardHeader } from '../../components/ui/card';
 import {
   Dialog,
   DialogClose,
@@ -14,7 +14,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '../components/ui/dialog';
+} from '../../components/ui/dialog';
 
 const ProfileSecurityBlock = () => {
   return (

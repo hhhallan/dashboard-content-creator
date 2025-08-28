@@ -2,8 +2,8 @@
 
 import { AlertTriangle, LogOut } from 'lucide-react';
 import { toast } from 'sonner';
-import { Button } from '../components/ui/button';
-import { Card, CardContent, CardHeader } from '../components/ui/card';
+import { Button } from '../../components/ui/button';
+import { Card, CardContent, CardHeader } from '../../components/ui/card';
 import {
   Dialog,
   DialogClose,
@@ -13,7 +13,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '../components/ui/dialog';
+} from '../../components/ui/dialog';
 
 const ProfileDangerZone = () => {
   return (
