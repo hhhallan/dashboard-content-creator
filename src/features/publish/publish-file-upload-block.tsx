@@ -4,7 +4,13 @@ import { useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { PublishFormValues } from '../../app/publier/page';
 import { DragDropInput } from '../../components/form/drag-drop-input';
-import { Card, CardContent, CardHeader } from '../../components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '../../components/ui/card';
 
 const PublishFileUploadBlock = () => {
   const { register, setValue, watch } = useFormContext<PublishFormValues>();
@@ -17,10 +23,10 @@ const PublishFileUploadBlock = () => {
   return (
     <Card>
       <CardHeader>
-        <h2 className="text-xl font-bold">Fichier vidéo</h2>
-        <p className="text-foreground/55 text-sm">
+        <CardTitle>Fichier vidéo</CardTitle>
+        <CardDescription>
           Glissez-déposer votre vidéo ou cliquez pour la sélectionner
-        </p>
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <DragDropInput

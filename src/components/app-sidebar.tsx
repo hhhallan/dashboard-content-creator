@@ -2,7 +2,7 @@
 
 import { Play } from 'lucide-react';
 import Link from 'next/link';
-import { items } from '../data/sidebar';
+import { items } from '../lib/data/sidebar';
 import { NavMain } from './nav-main';
 import {
   Sidebar,

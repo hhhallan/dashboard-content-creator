@@ -4,7 +4,12 @@ import { Lock } from 'lucide-react';
 import { toast } from 'sonner';
 import { Field } from '../../components/form/field';
 import { Button } from '../../components/ui/button';
-import { Card, CardContent, CardHeader } from '../../components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '../../components/ui/card';
 import {
   Dialog,
   DialogClose,
@@ -19,14 +24,16 @@ import {
 const ProfileSecurityBlock = () => {
   return (
     <Card>
-      <CardHeader className="flex items-center gap-2">
-        <Lock className="h-5" />
-        <h2 className="text-xl font-medium">Sécurité</h2>
+      <CardHeader>
+        <CardTitle>
+          <Lock className="h-5" />
+          Sécurité
+        </CardTitle>
       </CardHeader>
       <CardContent className="flex items-center justify-between gap-2">
         <div>
           <p className="text-lg font-bold">Mot de passe</p>
-          <p className="text-foreground/55 text-xs md:text-sm">
+          <p className="text-muted-foreground text-xs md:text-sm">
             Dernière modification il y a 2 mois
           </p>
         </div>

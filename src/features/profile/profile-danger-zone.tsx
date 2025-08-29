@@ -3,7 +3,12 @@
 import { AlertTriangle, LogOut } from 'lucide-react';
 import { toast } from 'sonner';
 import { Button } from '../../components/ui/button';
-import { Card, CardContent, CardHeader } from '../../components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '../../components/ui/card';
 import {
   Dialog,
   DialogClose,
@@ -18,9 +23,11 @@ import {
 const ProfileDangerZone = () => {
   return (
     <Card className="border-red-500/20">
-      <CardHeader className="flex items-center gap-2 text-red-700">
-        <AlertTriangle className="h-5" />
-        <h2 className="text-xl font-medium">Zone de danger</h2>
+      <CardHeader>
+        <CardTitle className="text-red-700">
+          <AlertTriangle className="h-5" />
+          Zone de danger
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-2">
         <Dialog>

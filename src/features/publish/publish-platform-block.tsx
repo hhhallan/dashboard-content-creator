@@ -5,7 +5,13 @@ import { useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 import type { PublishFormValues } from '../../app/publier/page';
 import { PublishPlatformItem } from '../../components/publish-platform-item';
-import { Card, CardContent, CardHeader } from '../../components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '../../components/ui/card';
 
 const platforms = [
   { name: 'TikTok', icon: Music, color: 'bg-slate-900' },
@@ -44,10 +50,10 @@ const PublishPlatformBlock = () => {
   return (
     <Card>
       <CardHeader>
-        <h2 className="text-xl font-bold">Plateformes de publication</h2>
-        <p className="text-foreground/55 text-sm">
+        <CardTitle>Plateformes de publication</CardTitle>
+        <CardDescription>
           Sélectionnez les plateformes où publier votre vidéo
-        </p>
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">

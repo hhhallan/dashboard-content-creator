@@ -6,34 +6,47 @@ import { Field } from '../../components/form/field';
 import { FieldGroup } from '../../components/form/field-group';
 import { Badge } from '../../components/ui/badge';
 import { Button } from '../../components/ui/button';
-import { Card, CardContent, CardHeader } from '../../components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '../../components/ui/card';
+import { user } from '../../lib/data/user';
 
 const ProfileInformationBlock = () => {
   return (
     <Card>
-      <CardHeader className="flex items-center gap-2">
-        <User className="h-5" />
-        <h2 className="text-xl font-medium">Informations personnelles</h2>
+      <CardHeader>
+        <CardTitle>
+          <User className="h-5" />
+          Informations personnelles
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="flex gap-4">
           <div className="rounded-full size-20 md:size-12 lg:size-20 bg-gradient-brand text-xl text-white font-medium flex items-center justify-center">
-            AD
+            {user.initials}
           </div>
           <div>
-            <p className="font-bold">Allan Leblond</p>
-            <p className="text-foreground/55 text-sm">email</p>
+            <p className="font-bold">{`${user.name} ${user.lastname}`}</p>
+            <p className="text-muted-foreground text-sm">{user.email}</p>
             <Badge variant="pro">Pro</Badge>
           </div>
         </div>
 
-        <form className="space-y-4">
+        <div className="space-y-4">
           <FieldGroup>
-            <Field label={'Prénom'} name={'prenom'} />
-            <Field label={'Nom'} name={'nom'} />
+            <Field label={'Prénom'} name={'prenom'} defaultValue={user.name} />
+            <Field label={'Nom'} name={'nom'} defaultValue={user.lastname} />
           </FieldGroup>
 
-          <Field label="Adresse email" name="email" type="email" />
+          <Field
+            label="Adresse email"
+            name="email"
+            type="email"
+            defaultValue={user.email}
+          />
 
           <Button
             variant="action"
@@ -41,7 +54,7 @@ const ProfileInformationBlock = () => {
           >
             Sauvegarder
           </Button>
-        </form>
+        </div>
       </CardContent>
     </Card>
   );

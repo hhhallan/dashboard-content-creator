@@ -4,7 +4,12 @@ import { useFormContext } from 'react-hook-form';
 import { PublishFormValues } from '../../app/publier/page';
 import { Field } from '../../components/form/field';
 import { InputHashtags } from '../../components/form/hastags-input';
-import { Card, CardContent, CardHeader } from '../../components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '../../components/ui/card';
 
 const PublishInformationBlock = () => {
   const {
@@ -15,7 +20,7 @@ const PublishInformationBlock = () => {
   return (
     <Card>
       <CardHeader>
-        <h2 className="text-xl font-bold">Informations de la vidéo</h2>
+        <CardTitle>Informations de la vidéo</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <Field

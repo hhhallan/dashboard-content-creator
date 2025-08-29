@@ -41,7 +41,7 @@ export const ProfilePlatformCard = ({ platform }: ProfilePlatformCardProps) => {
           <AppIcon className="size-4 md:size-8" />
           <div>
             <span className="font-bold">{app}</span>
-            <p className="hidden md:block text-foreground/55 text-sm">
+            <p className="hidden md:block text-muted-foreground text-sm">
               Publiez automatiquement sur {app}
             </p>
           </div>

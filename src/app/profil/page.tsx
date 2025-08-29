@@ -12,7 +12,7 @@ const ProfilPage = () => {
     <section className="space-y-6 max-w-[885px] mx-auto">
       <div className="space-y-2">
         <h1 className="text-3xl font-bold">Profil et paramètres</h1>
-        <p className="text-foreground/55">
+        <p className="text-muted-foreground">
           Gérez vos informations personnelles et préférences
         </p>
       </div>

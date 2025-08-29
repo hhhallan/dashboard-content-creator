@@ -3,9 +3,15 @@
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { InstagramIcon, Music, YoutubeIcon } from 'lucide-react';
-import { videos } from '../data/video';
+import { videos } from '../lib/data/video';
 import { Badge } from './ui/badge';
-import { Card, CardContent, CardHeader } from './ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from './ui/card';
 import {
   Table,
   TableBody,
@@ -47,10 +53,8 @@ export const TableRecentVideos = () => {
   return (
     <Card>
       <CardHeader>
-        <h2 className="text-xl font-bold">Vidéos récentes</h2>
-        <p className="text-foreground/55 text-sm">
-          Aperçu de vos dernières publications
-        </p>
+        <CardTitle>Vidéos récentes</CardTitle>
+        <CardDescription>Aperçu de vos dernières publications</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
