@@ -2,7 +2,12 @@
 
 import { Bell } from 'lucide-react';
 import { ProfileNotificationItem } from '../../components/profile-notification-item';
-import { Card, CardContent, CardHeader } from '../../components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '../../components/ui/card';
 
 const notificationSettings = [
   {
@@ -25,9 +30,11 @@ const notificationSettings = [
 const ProfileNotificationBlock = () => {
   return (
     <Card>
-      <CardHeader className="flex items-center gap-2">
-        <Bell className="h-5" />
-        <h2 className="text-xl font-medium">Préférences de notification</h2>
+      <CardHeader>
+        <CardTitle>
+          <Bell className="h-5" />
+          Préférences de notification
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         {notificationSettings.map((setting, i) => (

@@ -41,7 +41,7 @@ const PublishValidationStatesBlock = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="tex-lg font-bold">Statut de validation</CardTitle>
+        <CardTitle>Statut de validation</CardTitle>
       </CardHeader>
       <CardContent className="space-y-2">
         <Row ok={checks.file} label="Fichier vidéo" />

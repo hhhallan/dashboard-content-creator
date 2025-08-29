@@ -24,7 +24,9 @@ export const ProfileNotificationItem = ({
     <div className="flex items-center justify-between gap-2">
       <div>
         <p className="md:text-lg font-bold">{label}</p>
-        <p className="text-foreground/55 text-xs md:text-sm">{description}</p>
+        <p className="text-muted-foreground text-xs md:text-sm">
+          {description}
+        </p>
       </div>
 
       <Switch checked={enabled} onCheckedChange={handleSwitch} />

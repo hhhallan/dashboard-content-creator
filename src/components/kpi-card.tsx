@@ -39,7 +39,7 @@ export const KpiCard = ({ item }: KpiCardProps) => {
         <p className={cn('text-2xl font-medium', valueColorByVariant[v])}>
           {value}
         </p>
-        <p className="text-xs text-foreground/55">{subtitle}</p>
+        <p className="text-xs text-muted-foreground">{subtitle}</p>
       </CardContent>
     </Card>
   );

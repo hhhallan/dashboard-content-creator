@@ -7,6 +7,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from './ui/sidebar';
 
 type NavMainItem = {
@@ -19,6 +20,13 @@ type NavMainItem = {
 
 export const NavMain = ({ items }: { items: NavMainItem[] }) => {
   const pathname = usePathname();
+  const { setOpenMobile, isMobile } = useSidebar();
+
+  const handleItemClick = () => {
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+  };
 
   return (
     <SidebarContent>
@@ -38,7 +46,7 @@ export const NavMain = ({ items }: { items: NavMainItem[] }) => {
                     : 'text-muted-foreground hover:text-foreground hover:bg-accent'
                 )}
               >
-                <Link href={item.url}>
+                <Link href={item.url} onClick={handleItemClick}>
                   <item.icon className="lg:!size-5" />
                   <span>{item.title}</span>
                 </Link>

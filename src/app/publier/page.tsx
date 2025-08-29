@@ -32,7 +32,7 @@ const PublierPage = () => {
         {/* <section className="space-y-6"> */}
         <div className="space-y-2">
           <h1 className="text-3xl font-bold">Publier une vidéo</h1>
-          <p className="text-foreground/55">
+          <p className="text-muted-foreground">
             Créez et publiez sur vos plateformes sociales
           </p>
         </div>
